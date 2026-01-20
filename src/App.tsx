@@ -72,12 +72,9 @@ function App() {
         </div>
       </div>
       {(response || error) && (
-        <div className="response-card">
-          <h2>Server Response</h2>
+        <div >
           {error && <div className="error-message">{error}</div>}
-          {response && (
-            <pre className="response-json">{JSON.stringify(response, null, 2)}</pre>
-          )}
+          {!error && response && <div className="success-message">Successful!</div>}
         </div>
       )}
     </div>

@@ -52,7 +52,7 @@ body {
 }
 /* Response Card Styling */
 .response-card {
-  background: #16213e;
+  background: #16213e00;
   color: #e8e8e8;
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
@@ -91,6 +91,15 @@ body {
   font-weight: 600;
 }
 
+.success-message {
+  color: #51cf66;
+  background: #1a2d1a;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 2rem;
@@ -103,7 +112,7 @@ h1 {
 
 label {
   display: block;
-  margin-bb8b8b8;
+  margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
@@ -121,7 +130,7 @@ input {
 input:focus {
   outline: none;
   border-color: #e94560;
-  background: #1a1a2e
+  background: #1a1a2e;
   border-color: #667eea;
 }
 
@@ -129,16 +138,6 @@ input:focus {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
-}
-85rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .btn-primary {
@@ -160,9 +159,7 @@ input:focus {
 .btn-secondary:hover {
   background: #432a6f;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(83, 52, 131, 0.4)
-
-.btn-secondary:hover {
+  box-shadow: 0 4px 12px rgba(83, 52, 131, 0.4);
   background: #38a169;
 }
 
