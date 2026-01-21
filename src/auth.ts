@@ -1,4 +1,4 @@
-const API_BASE = "https://api.george.richmnd.uk";
+const API_BASE = "https://api.george.richmond.gg";
 
 export type AuthResponse = {
   username?: string;
