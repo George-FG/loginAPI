@@ -78,7 +78,7 @@ function App() {
             />
           </div>
           <div className="button-group">
-            <button onClick={handleLogin} className="btn btn-primary">
+            <button onClick={handleLogin} className="btn btn-primary" id='login'>
               Login
             </button>
             <button onClick={handleSignup} className="btn btn-secondary">
