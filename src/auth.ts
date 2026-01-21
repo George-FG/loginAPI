@@ -39,7 +39,8 @@ async function parseErrorBody(res: Response): Promise<{ message: string; body?: 
 async function postJson<T>(path: string, payload: unknown): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "credentials": "include" },
+    headers: { "Content-Type": "application/json" },
+    credentials: "include",
     body: JSON.stringify(payload),
   });
 
