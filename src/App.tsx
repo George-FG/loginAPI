@@ -4,11 +4,19 @@ import { login, signup } from './auth';
 import './App.css';
 
 
+
 function App() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [response, setResponse] = useState<AuthResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Helper to get redirectTo param from URL
+  function getRedirectTo(): string | null {
+    const params = new URLSearchParams(window.location.search);
+    const redirectTo = params.get('redirectTo');
+    return redirectTo ? decodeURIComponent(redirectTo) : null;
+  }
 
   const handleLogin = async () => {
     setError(null);
@@ -16,6 +24,10 @@ function App() {
     try {
       const res = await login({ username, password });
       setResponse(res);
+      // Redirect if no error and redirectTo param exists
+      if (!res?.message && getRedirectTo()) {
+        window.location.href = getRedirectTo()!;
+      }
     } catch (err: unknown) {
       const error = err as { message?: string; body?: unknown };
       setError(error?.message || 'Login failed');
@@ -29,6 +41,10 @@ function App() {
     try {
       const res = await signup({ username, password });
       setResponse(res);
+      // Redirect if no error and redirectTo param exists
+      if (!res?.message && getRedirectTo()) {
+        window.location.href = getRedirectTo()!;
+      }
     } catch (err: unknown) {
       const error = err as { message?: string; body?: unknown };
       setError(error?.message || 'Signup failed');
